@@ -15,9 +15,9 @@
     </metadata>
     <files>
         <!-- Android -->
-		<file src="./Source/bin/Release/netstandard2.0/OxyPlot.dll" target="lib/MonoAndroid81/OxyPlot.dll" />
-		<file src="./Source/bin/Release/netstandard2.0/OxyPlot.pdb" target="lib/MonoAndroid81/OxyPlot.pdb" />
-		<file src="./Source/bin/Release/netstandard2.0/OxyPlot.xml" target="lib/MonoAndroid81/OxyPlot.xml" />
+		<file src="./Source/external_bin/Release/netstandard2.0/OxyPlot.dll" target="lib/MonoAndroid81/OxyPlot.dll" />
+		<file src="./Source/external_bin/Release/netstandard2.0/OxyPlot.pdb" target="lib/MonoAndroid81/OxyPlot.pdb" />
+		<file src="./Source/external_bin/Release/netstandard2.0/OxyPlot.xml" target="lib/MonoAndroid81/OxyPlot.xml" />
 		
 		<file src="./Source/OxyPlot.Xamarin.Forms/bin/Release/netstandard2.0/OxyPlot.Xamarin.Forms.dll" target="lib/MonoAndroid81/OxyPlot.Xamarin.Forms.dll" />
 		<file src="./Source/OxyPlot.Xamarin.Forms/bin/Release/netstandard2.0/OxyPlot.Xamarin.Forms.pdb" target="lib/MonoAndroid81/OxyPlot.Xamarin.Forms.pdb" />
@@ -32,9 +32,9 @@
 		<file src="./Source/OxyPlot.Xamarin.Forms.Platform.Android/bin/Release/OxyPlot.Xamarin.Forms.Platform.Android.xml" target="lib/MonoAndroid81/OxyPlot.Xamarin.Forms.Platform.Android.xml" />
 		
         <!-- iOS -->
-		<file src="./Source/bin/Release/netstandard2.0/OxyPlot.dll" target="lib/Xamarin.iOS10/OxyPlot.dll" />
-		<file src="./Source/bin/Release/netstandard2.0/OxyPlot.pdb" target="lib/Xamarin.iOS10/OxyPlot.pdb" />
-		<file src="./Source/bin/Release/netstandard2.0/OxyPlot.xml" target="lib/Xamarin.iOS10/OxyPlot.xml" />
+		<file src="./Source/external_bin/Release/netstandard2.0/OxyPlot.dll" target="lib/Xamarin.iOS10/OxyPlot.dll" />
+		<file src="./Source/external_bin/Release/netstandard2.0/OxyPlot.pdb" target="lib/Xamarin.iOS10/OxyPlot.pdb" />
+		<file src="./Source/external_bin/Release/netstandard2.0/OxyPlot.xml" target="lib/Xamarin.iOS10/OxyPlot.xml" />
 		
 		<file src="./Source/OxyPlot.Xamarin.Forms/bin/Release/netstandard2.0/OxyPlot.Xamarin.Forms.dll" target="lib/Xamarin.iOS10/OxyPlot.Xamarin.Forms.dll" />
 		<file src="./Source/OxyPlot.Xamarin.Forms/bin/Release/netstandard2.0/OxyPlot.Xamarin.Forms.pdb" target="lib/Xamarin.iOS10/OxyPlot.Xamarin.Forms.pdb" />
@@ -49,9 +49,9 @@
 		<file src="./Source/OxyPlot.Xamarin.Forms.Platform.iOS/bin/Release/OxyPlot.Xamarin.Forms.Platform.iOS.xml" target="lib/Xamarin.iOS10/OxyPlot.Xamarin.Forms.Platform.iOS.xml" />
 		
 		<!-- netstandard2.0 -->
-		<file src="./Source/bin/Release/netstandard2.0/OxyPlot.dll" target="lib/netstandard2.0/OxyPlot.dll" />
-		<file src="./Source/bin/Release/netstandard2.0/OxyPlot.pdb" target="lib/netstandard2.0/OxyPlot.pdb" />
-		<file src="./Source/bin/Release/netstandard2.0/OxyPlot.xml" target="lib/netstandard2.0/OxyPlot.xml" />
+		<file src="./Source/external_bin/Release/netstandard2.0/OxyPlot.dll" target="lib/netstandard2.0/OxyPlot.dll" />
+		<file src="./Source/external_bin/Release/netstandard2.0/OxyPlot.pdb" target="lib/netstandard2.0/OxyPlot.pdb" />
+		<file src="./Source/external_bin/Release/netstandard2.0/OxyPlot.xml" target="lib/netstandard2.0/OxyPlot.xml" />
 		
 		<file src="./Source/OxyPlot.Xamarin.Forms/bin/Release/netstandard2.0/OxyPlot.Xamarin.Forms.dll" target="lib/netstandard2.0/OxyPlot.Xamarin.Forms.dll" />
 		<file src="./Source/OxyPlot.Xamarin.Forms/bin/Release/netstandard2.0/OxyPlot.Xamarin.Forms.pdb" target="lib/netstandard2.0/OxyPlot.Xamarin.Forms.pdb" />
