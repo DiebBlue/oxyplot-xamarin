@@ -313,7 +313,9 @@ namespace OxyPlot.Xamarin.iOS
                         context.FillRect (rect);
                     }
 
-                    actualModel.Render(renderer, rect.Width, rect.Height);
+                    //actualModel.Render(renderer, rect.Width, rect.Height);
+                    OxyRect oxy_rect = new OxyRect(rect.X, rect.Y, rect.Width, rect.Height);
+                    actualModel.Render(renderer, oxy_rect);
                 }
             }
         }

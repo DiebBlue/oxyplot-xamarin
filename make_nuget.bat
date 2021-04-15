@@ -1,0 +1,1 @@
+nuget pack "oxyplot-xamarin_release.nuspec" -Version "1.0.3" -OutputDirectory "local-nuget-feed"

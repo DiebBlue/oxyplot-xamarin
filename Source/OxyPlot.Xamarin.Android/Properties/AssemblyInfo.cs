@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("OxyPlot")]
 [assembly: AssemblyProduct("OxyPlot")]
-[assembly: AssemblyCopyright("Copyright (c) 2014 OxyPlot contributors")]
+[assembly: AssemblyCopyright("Copyright (c) 2021 OxyPlot contributors")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

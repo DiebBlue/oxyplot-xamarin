@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<package>
+    <metadata>
+        <id>OxyPlot.Xamarin.Forms</id>
+        <version>$version$</version>
+        <authors>OxyPlot contributors</authors>
+        <description>OxyPlot is a plotting library for .NET. This package targets Xamarin.Forms.</description>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <copyright>Copyright 2021</copyright>
+        <dependencies>
+			<group targetFramework="MonoAndroid81" />
+            <group targetFramework="Xamarin.iOS10" />
+            <group targetFramework="netstandard2.0" />
+        </dependencies>
+    </metadata>
+    <files>
+        <!-- Android -->
+		<file src="./Source/bin/Release/netstandard2.0/OxyPlot.dll" target="lib/MonoAndroid81/OxyPlot.dll" />
+		<file src="./Source/bin/Release/netstandard2.0/OxyPlot.pdb" target="lib/MonoAndroid81/OxyPlot.pdb" />
+		<file src="./Source/bin/Release/netstandard2.0/OxyPlot.xml" target="lib/MonoAndroid81/OxyPlot.xml" />
+		
+		<file src="./Source/OxyPlot.Xamarin.Forms/bin/Release/netstandard2.0/OxyPlot.Xamarin.Forms.dll" target="lib/MonoAndroid81/OxyPlot.Xamarin.Forms.dll" />
+		<file src="./Source/OxyPlot.Xamarin.Forms/bin/Release/netstandard2.0/OxyPlot.Xamarin.Forms.pdb" target="lib/MonoAndroid81/OxyPlot.Xamarin.Forms.pdb" />
+		<file src="./Source/OxyPlot.Xamarin.Forms/bin/Release/netstandard2.0/OxyPlot.Xamarin.Forms.xml" target="lib/MonoAndroid81/OxyPlot.Xamarin.Forms.xml" />
+		
+		<file src="./Source/OxyPlot.Xamarin.Android/bin/Release/OxyPlot.Xamarin.Android.dll" target="lib/MonoAndroid81/OxyPlot.Xamarin.Android.dll" />
+		<file src="./Source/OxyPlot.Xamarin.Android/bin/Release/OxyPlot.Xamarin.Android.pdb" target="lib/MonoAndroid81/OxyPlot.Xamarin.Android.pdb" />
+		<file src="./Source/OxyPlot.Xamarin.Android/bin/Release/OxyPlot.Xamarin.Android.xml" target="lib/MonoAndroid81/OxyPlot.Xamarin.Android.xml" />
+				
+		<file src="./Source/OxyPlot.Xamarin.Forms.Platform.Android/bin/Release/OxyPlot.Xamarin.Forms.Platform.Android.dll" target="lib/MonoAndroid81/OxyPlot.Xamarin.Forms.Platform.Android.dll" />
+		<file src="./Source/OxyPlot.Xamarin.Forms.Platform.Android/bin/Release/OxyPlot.Xamarin.Forms.Platform.Android.pdb" target="lib/MonoAndroid81/OxyPlot.Xamarin.Forms.Platform.Android.pdb" />
+		<file src="./Source/OxyPlot.Xamarin.Forms.Platform.Android/bin/Release/OxyPlot.Xamarin.Forms.Platform.Android.xml" target="lib/MonoAndroid81/OxyPlot.Xamarin.Forms.Platform.Android.xml" />
+		
+        <!-- iOS -->
+		<file src="./Source/bin/Release/netstandard2.0/OxyPlot.dll" target="lib/Xamarin.iOS10/OxyPlot.dll" />
+		<file src="./Source/bin/Release/netstandard2.0/OxyPlot.pdb" target="lib/Xamarin.iOS10/OxyPlot.pdb" />
+		<file src="./Source/bin/Release/netstandard2.0/OxyPlot.xml" target="lib/Xamarin.iOS10/OxyPlot.xml" />
+		
+		<file src="./Source/OxyPlot.Xamarin.Forms/bin/Release/netstandard2.0/OxyPlot.Xamarin.Forms.dll" target="lib/Xamarin.iOS10/OxyPlot.Xamarin.Forms.dll" />
+		<file src="./Source/OxyPlot.Xamarin.Forms/bin/Release/netstandard2.0/OxyPlot.Xamarin.Forms.pdb" target="lib/Xamarin.iOS10/OxyPlot.Xamarin.Forms.pdb" />
+		<file src="./Source/OxyPlot.Xamarin.Forms/bin/Release/netstandard2.0/OxyPlot.Xamarin.Forms.xml" target="lib/Xamarin.iOS10/OxyPlot.Xamarin.Forms.xml" />
+		
+		<file src="./Source/OxyPlot.Xamarin.iOS/bin/Release/OxyPlot.Xamarin.iOS.dll" target="lib/Xamarin.iOS10/OxyPlot.Xamarin.iOS.dll" />
+		<file src="./Source/OxyPlot.Xamarin.iOS/bin/Release/OxyPlot.Xamarin.iOS.pdb" target="lib/Xamarin.iOS10/OxyPlot.Xamarin.iOS.pdb" />
+		<file src="./Source/OxyPlot.Xamarin.iOS/bin/Release/OxyPlot.Xamarin.iOS.xml" target="lib/Xamarin.iOS10/OxyPlot.Xamarin.iOS.xml" />
+        
+		<file src="./Source/OxyPlot.Xamarin.Forms.Platform.iOS/bin/Release/OxyPlot.Xamarin.Forms.Platform.iOS.dll" target="lib/Xamarin.iOS10/OxyPlot.Xamarin.Forms.Platform.iOS.dll" />
+		<file src="./Source/OxyPlot.Xamarin.Forms.Platform.iOS/bin/Release/OxyPlot.Xamarin.Forms.Platform.iOS.pdb" target="lib/Xamarin.iOS10/OxyPlot.Xamarin.Forms.Platform.iOS.pdb" />
+		<file src="./Source/OxyPlot.Xamarin.Forms.Platform.iOS/bin/Release/OxyPlot.Xamarin.Forms.Platform.iOS.xml" target="lib/Xamarin.iOS10/OxyPlot.Xamarin.Forms.Platform.iOS.xml" />
+		
+		<!-- netstandard2.0 -->
+		<file src="./Source/bin/Release/netstandard2.0/OxyPlot.dll" target="lib/netstandard2.0/OxyPlot.dll" />
+		<file src="./Source/bin/Release/netstandard2.0/OxyPlot.pdb" target="lib/netstandard2.0/OxyPlot.pdb" />
+		<file src="./Source/bin/Release/netstandard2.0/OxyPlot.xml" target="lib/netstandard2.0/OxyPlot.xml" />
+		
+		<file src="./Source/OxyPlot.Xamarin.Forms/bin/Release/netstandard2.0/OxyPlot.Xamarin.Forms.dll" target="lib/netstandard2.0/OxyPlot.Xamarin.Forms.dll" />
+		<file src="./Source/OxyPlot.Xamarin.Forms/bin/Release/netstandard2.0/OxyPlot.Xamarin.Forms.pdb" target="lib/netstandard2.0/OxyPlot.Xamarin.Forms.pdb" />
+		<file src="./Source/OxyPlot.Xamarin.Forms/bin/Release/netstandard2.0/OxyPlot.Xamarin.Forms.xml" target="lib/netstandard2.0/OxyPlot.Xamarin.Forms.xml" />
+    </files>
+</package>

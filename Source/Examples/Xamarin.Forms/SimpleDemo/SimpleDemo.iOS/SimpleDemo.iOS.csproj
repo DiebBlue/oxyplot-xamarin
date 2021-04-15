@@ -16,10 +16,11 @@
     <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <ProvisioningType>manual</ProvisioningType>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
+    <DebugType>portable</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
     <DefineConstants>DEBUG</DefineConstants>
@@ -31,7 +32,7 @@
     <MtouchDebug>true</MtouchDebug>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
-    <DebugType>none</DebugType>
+    <DebugType>portable</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
@@ -39,6 +40,7 @@
     <MtouchLink>None</MtouchLink>
     <MtouchArch>x86_64</MtouchArch>
     <ConsolePause>false</ConsolePause>
+    <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
     <DebugSymbols>true</DebugSymbols>
@@ -143,6 +145,10 @@
     </ImageAsset>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="OxyPlot">
+      <HintPath>..\..\..\..\bin\Release\netstandard2.0\OxyPlot.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -151,11 +157,23 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.3.0.908675" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\OxyPlot.Xamarin.Forms\OxyPlot.Xamarin.Forms.csproj">
+      <Project>{b63c5f8c-61c8-4e69-93d6-f49f816d3746}</Project>
+      <Name>OxyPlot.Xamarin.Forms</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\OxyPlot.Xamarin.iOS\OxyPlot.Xamarin.iOS.csproj">
+      <Project>{191abc81-b335-44d7-be0d-3c5e9196fa8b}</Project>
+      <Name>OxyPlot.Xamarin.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
+      <Private>False</Private>
+    </ProjectReference>
     <ProjectReference Include="..\SimpleDemo\SimpleDemo.csproj">
       <Project>{292A7A42-1A55-45EF-9DAA-4A7368CB956F}</Project>
       <Name>SimpleDemo</Name>
@@ -163,6 +181,9 @@
     <ProjectReference Include="..\..\..\..\OxyPlot.Xamarin.Forms.Platform.iOS\OxyPlot.Xamarin.Forms.Platform.iOS.csproj">
       <Project>{64F4DC0C-2BFE-4C22-B9D1-B04566C2314C}</Project>
       <Name>OxyPlot.Xamarin.Forms.Platform.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
+      <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
 </Project>

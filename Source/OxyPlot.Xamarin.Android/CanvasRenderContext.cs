@@ -17,7 +17,7 @@ namespace OxyPlot.Xamarin.Android
     /// <summary>
     /// Provides a render context for Android.Graphics.Canvas.
     /// </summary>
-    public class CanvasRenderContext : RenderContextBase
+    public class CanvasRenderContext : ClippingRenderContext
     {
         /// <summary>
         /// The images in use
@@ -96,7 +96,8 @@ namespace OxyPlot.Xamarin.Android
         /// <param name="fill">The fill color.</param>
         /// <param name="stroke">The stroke color.</param>
         /// <param name="thickness">The thickness.</param>
-        public override void DrawEllipse(OxyRect rect, OxyColor fill, OxyColor stroke, double thickness)
+        /// <param name="edgeRenderingMode">The edge rendering mode.</param>
+        public override void DrawEllipse(OxyRect rect, OxyColor fill, OxyColor stroke, double thickness, EdgeRenderingMode edgeRenderingMode)
         {
             this.paint.Reset();
             {
@@ -108,6 +109,7 @@ namespace OxyPlot.Xamarin.Android
 
                 if (stroke.IsVisible())
                 {
+                    bool aliased = ShouldUseAntiAliasingForEllipse(edgeRenderingMode);
                     this.SetStroke(stroke, thickness);
                     this.canvas.DrawOval(this.Convert(rect), this.paint);
                 }
@@ -122,7 +124,8 @@ namespace OxyPlot.Xamarin.Android
         /// <param name="fill">The fill color.</param>
         /// <param name="stroke">The stroke color.</param>
         /// <param name="thickness">The stroke thickness.</param>
-        public override void DrawEllipses(IList<OxyRect> rectangles, OxyColor fill, OxyColor stroke, double thickness)
+        /// <param name="edgeRenderingMode">The edge rendering mode.</param>
+        public override void DrawEllipses(IList<OxyRect> rectangles, OxyColor fill, OxyColor stroke, double thickness, EdgeRenderingMode edgeRenderingMode)
         {
             this.paint.Reset();
             {
@@ -136,7 +139,8 @@ namespace OxyPlot.Xamarin.Android
 
                     if (stroke.IsVisible())
                     {
-                        this.SetStroke(stroke, thickness);
+                        bool aliased = ShouldUseAntiAliasingForEllipse(edgeRenderingMode);
+                        this.SetStroke(stroke, thickness, aliased: aliased);
                         this.canvas.DrawOval(this.Convert(rect), this.paint);
                     }
                 }
@@ -149,15 +153,16 @@ namespace OxyPlot.Xamarin.Android
         /// <param name="points">The points.</param>
         /// <param name="stroke">The stroke color.</param>
         /// <param name="thickness">The stroke thickness.</param>
+        /// <param name="edgeRenderingMode">The edge rendering mode.</param>
         /// <param name="dashArray">The dash array.</param>
         /// <param name="lineJoin">The line join type.</param>
-        /// <param name="aliased">if set to <c>true</c> the shape will be aliased.</param>
-        public override void DrawLine(IList<ScreenPoint> points, OxyColor stroke, double thickness, double[] dashArray, LineJoin lineJoin, bool aliased)
+        public override void DrawLine(IList<ScreenPoint> points, OxyColor stroke, double thickness, EdgeRenderingMode edgeRenderingMode, double[] dashArray, LineJoin lineJoin)
         {
             this.paint.Reset();
             {
                 this.path.Reset();
                 {
+                    bool aliased = ShouldUseAntiAliasingForLine(edgeRenderingMode, points);
                     this.SetPath(points, aliased);
                     this.SetStroke(stroke, thickness, dashArray, lineJoin, aliased);
                     this.canvas.DrawPath(this.path, this.paint);
@@ -172,13 +177,14 @@ namespace OxyPlot.Xamarin.Android
         /// <param name="points">The points.</param>
         /// <param name="stroke">The stroke color.</param>
         /// <param name="thickness">The stroke thickness.</param>
+        /// <param name="edgeRenderingMode">The edge rendering mode.</param>
         /// <param name="dashArray">The dash array.</param>
         /// <param name="lineJoin">The line join type.</param>
-        /// <param name="aliased">If set to <c>true</c> the shape will be aliased.</param>
-        public override void DrawLineSegments(IList<ScreenPoint> points, OxyColor stroke, double thickness, double[] dashArray, LineJoin lineJoin, bool aliased)
+        public override void DrawLineSegments(IList<ScreenPoint> points, OxyColor stroke, double thickness, EdgeRenderingMode edgeRenderingMode, double[] dashArray, LineJoin lineJoin)
         {
             this.paint.Reset();
             {
+                bool aliased = ShouldUseAntiAliasingForLine(edgeRenderingMode, points);
                 this.SetStroke(stroke, thickness, dashArray, lineJoin, aliased);
                 this.pts.Clear();
                 if (aliased)
@@ -209,15 +215,16 @@ namespace OxyPlot.Xamarin.Android
         /// <param name="fill">The fill color.</param>
         /// <param name="stroke">The stroke color.</param>
         /// <param name="thickness">The stroke thickness.</param>
+        /// <param name="edgeRenderingMode">The edge rendering mode.</param>
         /// <param name="dashArray">The dash array.</param>
         /// <param name="lineJoin">The line join type.</param>
-        /// <param name="aliased">If set to <c>true</c> the shape will be aliased.</param>
-        public override void DrawPolygon(IList<ScreenPoint> points, OxyColor fill, OxyColor stroke, double thickness, double[] dashArray, LineJoin lineJoin, bool aliased)
+        public override void DrawPolygon(IList<ScreenPoint> points, OxyColor fill, OxyColor stroke, double thickness, EdgeRenderingMode edgeRenderingMode, double[] dashArray, LineJoin lineJoin)
         {
             this.paint.Reset();
             {
                 this.path.Reset();
                 {
+                    bool aliased = ShouldUseAntiAliasingForLine(edgeRenderingMode, points);
                     this.SetPath(points, aliased);
                     this.path.Close();
 
@@ -243,7 +250,8 @@ namespace OxyPlot.Xamarin.Android
         /// <param name="fill">The fill color.</param>
         /// <param name="stroke">The stroke color.</param>
         /// <param name="thickness">The stroke thickness.</param>
-        public override void DrawRectangle(OxyRect rect, OxyColor fill, OxyColor stroke, double thickness)
+        /// <param name="edgeRenderingMode">The edge rendering mode.</param>
+        public override void DrawRectangle(OxyRect rect, OxyColor fill, OxyColor stroke, double thickness, EdgeRenderingMode edgeRenderingMode)
         {
             this.paint.Reset();
             {
@@ -255,7 +263,8 @@ namespace OxyPlot.Xamarin.Android
 
                 if (stroke.IsVisible())
                 {
-                    this.SetStroke(stroke, thickness, aliased: true);
+                    bool aliased = ShouldUseAntiAliasingForRect(edgeRenderingMode);
+                    this.SetStroke(stroke, thickness, aliased: aliased);
                     this.canvas.DrawRect(this.ConvertAliased(rect.Left), this.ConvertAliased(rect.Top), this.ConvertAliased(rect.Right), this.ConvertAliased(rect.Bottom), this.paint);
                 }
             }
@@ -361,22 +370,21 @@ namespace OxyPlot.Xamarin.Android
             }
         }
 
+        
         /// <summary>
         /// Sets the clip rectangle.
         /// </summary>
         /// <param name="rect">The clip rectangle.</param>
-        /// <returns>True if the clip rectangle was set.</returns>
-        public override bool SetClip(OxyRect rect)
+        protected override void SetClip(OxyRect rect)
         {
             this.canvas.Save();
             this.canvas.ClipRect(this.Convert(rect));
-            return true;
         }
-
+                
         /// <summary>
         /// Resets the clip rectangle.
         /// </summary>
-        public override void ResetClip()
+        protected override void ResetClip()
         {
             this.canvas.Restore();
         }

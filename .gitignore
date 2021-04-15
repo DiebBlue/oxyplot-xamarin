@@ -1,5 +1,8 @@
 bin/
+!Source/bin/
 obj/
 .vs/
 packages/
+local-nuget-feed/
 Resource.designer.cs
+OxyPlot.Xamarin.Forms.xml
